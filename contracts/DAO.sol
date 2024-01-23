@@ -56,6 +56,8 @@ contract DAO {
         address payable _recipient
     ) external onlyInvestor {
         require(address(this).balance >= _amount);
+        // must be a DAO member to create a new proposal
+        require(Token(token).balanceOf(msg.sender) > 0, "must be token holder");
 
         proposalCount++;
 
