@@ -1,6 +1,7 @@
 import Navbar from 'react-bootstrap/Navbar';
 
 import logo from '../logo.png';
+import walletLogo from '../wallet.png';
 
 const Navigation = ({ account }) => {
   return (
@@ -15,7 +16,16 @@ const Navigation = ({ account }) => {
       <Navbar.Brand href="#">Axis DAO</Navbar.Brand>
       <Navbar.Collapse className="justify-content-end">
         <Navbar.Text>
-        {account.slice(0, 5) + '...' + account.slice(38, 42)}
+
+        {account ? (
+            <Navbar.Text className='d-flex align-items-center'>
+              {account.slice(0, 5) + '...' + account.slice(38, 42)}
+              <img src={walletLogo} width={24} alt="Icon" style={{ marginLeft: '10px' }} />
+            </Navbar.Text>                      
+          ) : (
+            <div>Please connect wallet</div>
+          )}
+
         </Navbar.Text>
       </Navbar.Collapse>
     </Navbar>
