@@ -2,7 +2,7 @@
 AxisDAO (Decentralized Autonomous Organization)
 
 ## Introduction
-Welcome to the GitHub repository for Axis, a sample (fictional) Decentralized Autonomous Organization (DAO) that serves as a basic primer to understanding DAO processes and use cases. Advanced libraries such as OpenZeppelin have been purposely omitted for educational purposes. This project is dedicated to anyone curious about the DOA paradigm, like facilitating decentralized governance, enabling community-led initiatives, etc.
+Welcome to the GitHub repository for Axis, a sample (fictional) Decentralized Autonomous Organization (DAO) that serves as a basic primer to understanding DAO processes and use cases. Advanced libraries such as OpenZeppelin have been purposely omitted for educational purposes. This project is dedicated to anyone curious about the DOA paradigm, facilitating decentralized governance, enabling community-led initiatives, etc.
 
 ## Features
 - **Create proposals** 
