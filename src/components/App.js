@@ -4,6 +4,7 @@ import { ethers } from "ethers";
 
 // Components
 import Navigation from "./Navigation";
+import Create from './Create';
 import Proposals from "./Proposals";
 import Loading from "./Loading";
 
@@ -44,15 +45,12 @@ function App() {
     setTreasuryBalance(treasuryBalance);
 
     // Fetch accounts
-    const accounts = await window.ethereum.request({
-      method: "eth_requestAccounts",
-    });
+    const accounts = await window.ethereum.request({method: "eth_requestAccounts"});
     const account = ethers.utils.getAddress(accounts[0]);
     setAccount(account);
 
     // Fetch proposals count
-    const count = await dao.proposalCount();
-    console.log("proposal count ", count);
+    const count = await dao.proposalCount();    
     const items = [];
 
     for (var i = 0; i < count; i++) {
@@ -86,6 +84,12 @@ function App() {
         <Loading />
       ) : (
         <>
+          <Create 
+            provider={provider}
+            dao={dao}
+            setIsLoading={setIsLoading}
+          />
+
           <p className="text-center">
             <strong>Treasury Balance:</strong> {treasuryBalance} ETH
           </p>
