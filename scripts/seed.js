@@ -46,7 +46,7 @@ async function main() {
     console.log(`DAO fetched: ${dao.address}\n`)
   
     // Funder sends Ether to DAO treasury
-    transaction = await funder.sendTransaction({ to: dao.address, value: ether(1000) }) // 1,000 Ether
+    transaction = await funder.sendTransaction({ to: dao.address, value: ether(900) }) // 1,000 Ether
     await transaction.wait()
     console.log(`Sent funds to dao treasury...\n`)
   
