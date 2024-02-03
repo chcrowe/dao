@@ -38,38 +38,51 @@ git clone https://github.com/chcrowe/dao
 cd dao
 ```
 
-- **Step 4**: Initialize and install node package dependencies into the project directory.
+- **Step 4**: Install node package dependencies into the project directory.
 ```
-npm init -y
-```
-
-- **Step 5**: Install Hardhat using npm
-```
-npm install --save-dev hardhat
+npm install
 ```
 
-- **Step 6**: Start the hardhat node
+- **Step 5**: Verify Hardhat installation
 ```
-npm install --save-dev hardhat
+npx hardhat
 ```
 
-- **Step 7**: Run units tests (localhost)
+- **Step 6**: Compile code
+```
+npx hardhat clean
+npx hardhat compile
+```
+
+- **Step 7**: Start the hardhat node
+```
+npx hardhat node
+```
+
+- **Step 8**: Run units tests (localhost)
 ```
 npx hardhat test ./test/DAO.js
 npx hardhat test ./test/Token.js
 ```
 
-- **Step 8**: Deploy solidity smart contracts to the hardhat node instance
+- **Step 9**: Deploy solidity smart contracts to the hardhat node instance
 ```
 npx hardhat run ./scripts/deploy.js --network localhost
 ```
 
-- **Step 9**: Seed initial dao holder funds
+- **Step 10**: Seed initial dao holder funds
 ```
 npx hardhat run ./scripts/seed.js --network localhost
 ```
 
-- **Step 10**: launch dao dapp
+- **Step 11**: launch dao dapp
 ```
+npm run start
+```
+
+- **Troubleshooting**: If you have followed all of the previous steps and still have difficulty, try cleaning and re-compiling
+```
+npx hardhat clean
+npx hardhat compile
 npm run start
 ```
